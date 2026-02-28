@@ -21,6 +21,7 @@ from game.core.constants import (
 )
 from game.entities.bullet import Bullet
 from game.systems.animation import Animation
+from game.systems.collisions import resolve_entity_vs_obstacles
 
 # Module-level sprite loading (shared across all instances)
 _player_sprites: dict[str, list[pygame.Surface]] | None = None
@@ -53,6 +54,7 @@ class Player:
         self.hp = float(PLAYER_MAX_HP)
         self.shoot_cooldown = 0.0
         self.shoot_timer = 0.0  # Timer for shooting animation display
+        self.pain_timer: float = 0.0  # Seconds until HUD pain flash ends
         self.current_weapon: str = "pistol"
         self.weapons_inventory: set[str] = {"pistol"}  # Start with pistol
 
@@ -62,11 +64,12 @@ class Player:
             frame_count=PLAYER_FRAME_COUNT, fps=PLAYER_ANIMATION_FPS
         )
 
-    def update(self, dt: float) -> None:
+    def update(self, dt: float, obstacles: list | None = None) -> None:
         """Update player movement.
 
         Args:
             dt: Delta time in seconds.
+            obstacles: List of Obstacle instances for collision resolution.
         """
         keys = pygame.key.get_pressed()
         self.vel.x = 0
@@ -93,6 +96,13 @@ class Player:
         self.pos.x = max(self.radius, min(WIDTH - self.radius, self.pos.x))
         self.pos.y = max(self.radius, min(HEIGHT - self.radius, self.pos.y))
 
+        # Obstacle push-out
+        if obstacles:
+            self.pos = resolve_entity_vs_obstacles(self.pos, self.radius, obstacles)
+            # Re-clamp after obstacle resolution
+            self.pos.x = max(self.radius, min(WIDTH - self.radius, self.pos.x))
+            self.pos.y = max(self.radius, min(HEIGHT - self.radius, self.pos.y))
+
         # Update animation based on current velocity
         self.animation.update(dt, self.vel)
 
@@ -103,6 +113,10 @@ class Player:
         # Decrement shoot timer
         if self.shoot_timer > 0:
             self.shoot_timer -= dt
+
+        # Decrement pain flash timer
+        if self.pain_timer > 0:
+            self.pain_timer -= dt
 
     def shoot(self, target_pos: pygame.Vector2) -> list[Bullet]:
         """Shoot bullets toward target if cooldown ready.
@@ -177,6 +191,18 @@ class Player:
             self.current_weapon = weapon_type
             return True
         return False
+
+    def take_damage(self, amount: float) -> None:
+        """Apply damage and trigger HUD pain flash.
+
+        Args:
+            amount: HP to subtract (positive value; 0 is a no-op).
+        """
+        if amount > 0:
+            from game.core.constants import HUD_PAIN_FLASH_DURATION
+
+            self.hp -= amount
+            self.pain_timer = HUD_PAIN_FLASH_DURATION
 
     def draw(self, screen: pygame.Surface) -> None:
         """Draw player to screen.

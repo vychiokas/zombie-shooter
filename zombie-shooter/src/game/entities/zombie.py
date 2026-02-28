@@ -12,6 +12,7 @@ from game.core.constants import (
     ZOMBIE_VARIANTS,
 )
 from game.systems.animation import Animation
+from game.systems.collisions import resolve_entity_vs_obstacles
 
 # Module-level sprite loading (shared across all instances by variant)
 _zombie_sprites: dict[str, dict[str, list[pygame.Surface]]] = {}
@@ -63,12 +64,18 @@ class Zombie:
         self.attack_cooldown = 0.0
         self.pending_projectiles: list[tuple[pygame.Vector2, pygame.Vector2]] = []
 
-    def update(self, dt: float, player_pos: pygame.Vector2) -> None:
+    def update(
+        self,
+        dt: float,
+        player_pos: pygame.Vector2,
+        obstacles: list | None = None,
+    ) -> None:
         """Move toward player position.
 
         Args:
             dt: Delta time in seconds.
             player_pos: Target player position to move toward.
+            obstacles: List of Obstacle instances for collision resolution.
         """
         direction = player_pos - self.pos
         if direction.length() > 0:
@@ -77,6 +84,10 @@ class Zombie:
         else:
             # Explicitly set zero velocity when stationary
             self.vel = pygame.Vector2(0, 0)
+
+        # Obstacle push-out (applied after movement)
+        if obstacles:
+            self.pos = resolve_entity_vs_obstacles(self.pos, self.radius, obstacles)
 
         # Update animation based on current velocity
         self.animation.update(dt, self.vel)

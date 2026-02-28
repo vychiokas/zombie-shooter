@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import math
+
 import pygame
 
 
@@ -108,3 +110,126 @@ def check_acid_projectile_player_collisions(
         ):
             colliding.append(p_idx)
     return colliding
+
+
+def resolve_circle_vs_circle_obstacle(
+    entity_pos: pygame.Vector2,
+    entity_radius: float,
+    obstacle_pos: pygame.Vector2,
+    obstacle_radius: float,
+) -> pygame.Vector2:
+    """Push entity out of a circular obstacle using minimum separation.
+
+    Args:
+        entity_pos: Entity center position.
+        entity_radius: Entity collision radius.
+        obstacle_pos: Obstacle center position.
+        obstacle_radius: Obstacle collision radius.
+
+    Returns:
+        Corrected entity position (unchanged if no overlap).
+    """
+    diff = entity_pos - obstacle_pos
+    dist = diff.length()
+    min_dist = entity_radius + obstacle_radius
+
+    if dist < min_dist:
+        if dist > 0:
+            return obstacle_pos + diff.normalize() * min_dist
+        # Exactly on center — push upward
+        return pygame.Vector2(obstacle_pos.x, obstacle_pos.y - min_dist)
+    return pygame.Vector2(entity_pos)
+
+
+def resolve_circle_vs_rect_obstacle(
+    entity_pos: pygame.Vector2,
+    entity_radius: float,
+    obstacle_rect: pygame.Rect,
+) -> pygame.Vector2:
+    """Push entity circle out of a rectangular obstacle (AABB).
+
+    Uses closest-point-on-rect method: finds nearest point on the rect to
+    entity center, then pushes entity out along that normal. For entity
+    centers inside the rect, falls back to axis-of-least-overlap push.
+
+    Args:
+        entity_pos: Entity center position.
+        entity_radius: Entity collision radius.
+        obstacle_rect: Obstacle axis-aligned bounding rect.
+
+    Returns:
+        Corrected entity position (unchanged if no overlap).
+    """
+    closest_x = max(
+        float(obstacle_rect.left), min(entity_pos.x, float(obstacle_rect.right))
+    )
+    closest_y = max(
+        float(obstacle_rect.top), min(entity_pos.y, float(obstacle_rect.bottom))
+    )
+
+    diff_x = entity_pos.x - closest_x
+    diff_y = entity_pos.y - closest_y
+    dist_sq = diff_x * diff_x + diff_y * diff_y
+
+    if dist_sq >= entity_radius * entity_radius:
+        return pygame.Vector2(entity_pos)  # no overlap
+
+    new_pos = pygame.Vector2(entity_pos)
+
+    if dist_sq > 0:
+        # Push along normal from closest point to entity center
+        dist = math.sqrt(dist_sq)
+        new_pos.x = closest_x + (diff_x / dist) * entity_radius
+        new_pos.y = closest_y + (diff_y / dist) * entity_radius
+    else:
+        # Entity center is inside rect — push out on axis with smaller overlap
+        cx = float(obstacle_rect.centerx)
+        cy = float(obstacle_rect.centery)
+        half_w = obstacle_rect.width / 2.0 + entity_radius
+        half_h = obstacle_rect.height / 2.0 + entity_radius
+
+        push_x = half_w - abs(entity_pos.x - cx)
+        push_y = half_h - abs(entity_pos.y - cy)
+
+        if push_x < push_y:
+            sign_x = 1.0 if entity_pos.x >= cx else -1.0
+            new_pos.x = cx + sign_x * half_w
+        else:
+            sign_y = 1.0 if entity_pos.y >= cy else -1.0
+            new_pos.y = cy + sign_y * half_h
+
+    return new_pos
+
+
+def resolve_entity_vs_obstacles(
+    entity_pos: pygame.Vector2,
+    entity_radius: float,
+    obstacles: list,
+) -> pygame.Vector2:
+    """Apply push-out resolution against all solid obstacles.
+
+    Args:
+        entity_pos: Entity center position.
+        entity_radius: Entity collision radius.
+        obstacles: List of Obstacle instances.
+
+    Returns:
+        Corrected entity position after all push-outs.
+    """
+    pos = pygame.Vector2(entity_pos)
+
+    for obstacle in obstacles:
+        if not obstacle.solid:
+            continue
+
+        if obstacle.shape == "circle":
+            pos = resolve_circle_vs_circle_obstacle(
+                pos, entity_radius, obstacle.pos, obstacle.radius
+            )
+        else:
+            # rect and ellipse both use AABB
+            pos = resolve_circle_vs_rect_obstacle(
+                pos, entity_radius, obstacle.get_rect()
+            )
+
+    return pos
