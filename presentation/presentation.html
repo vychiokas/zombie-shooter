@@ -283,7 +283,7 @@
     <div class="reveal">
         <div class="slides">
 
-<!-- ─────────────────────────── SLIDE 1: Title ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 1: Title ─────────────────────────────── -->
 <section>
 <h1>Pygame Curiosity + Claude + PRP Framework</h1>
 <h1 style="font-size:1.5em">= Maintainable Game 🎮</h1>
@@ -293,59 +293,48 @@
 </div>
 </section>
 
-<!-- ─────────────────────────── SLIDE 2: About Me ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 2: About Me ─────────────────────────────── -->
 <section>
 <h2>About Me</h2>
 <div class="two-col-img">
-<ul>
+<ul style="font-size:0.68em">
     <li>Vytautas Sluckas</li>
-    <li>Data / AI Engineer at Exacaster</li>
-    <li>Python for everything</li>
+    <li>Data / AI Engineer at <img src="media/exacaster.svg" alt="Exacaster" style="height:0.9em;vertical-align:middle;filter:brightness(0) invert(1);margin-left:0.3em"></li>
+    <li>Python enjoyer</li>
     <li>Dad of two — hobbies are a myth</li>
 </ul>
 <img src="media/image1.jpeg" alt="Vytautas Sluckas" style="max-height:48vh;border-radius:6px;object-fit:cover;margin:0 auto;display:block">
 </div>
 </section>
 
-<!-- ─────────────────────────── SLIDE 3: Will Smith video ─────────────────────────── -->
-<section>
+<!-- ─────────────────────────────── SLIDE 3: Will Smith video ─────────────────────────────── -->
+<section data-visibility="hidden">
 <p class="caption" style="margin-bottom:0.6em">Since my transition to AI engineer — this video is required viewing</p>
 <video controls poster="media/image3.png" aria-label="Will Smith Fresh Prince clip" style="max-height:68vh;max-width:90%;display:block;margin:0 auto;border-radius:6px"><source src="media/media1.mp4"></video>
 </section>
 
-<!-- ─────────────────────────── SLIDE 4: Why this project ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 4: Where this started ─────────────────────────────── -->
 <section>
 <h2>Where This Started</h2>
 <ul>
-    <li>New AI engineer role — wanted to push limits</li>
-    <li>Pygame looked fun on YouTube, never tried it</li>
-    <li>PRP methodology needed a real test</li>
-    <li>Unfamiliar library + AI = honest experiment</li>
+    <li>Pygame seemed fun, never touched it</li>
+    <li>Can I make the SOLID game with AI?</li>
+    <li>How will PRP framework behave?</li>
+    <li>Rule: production-grade only — tests, docs, clean architecture</li>
 </ul>
 </section>
 
-<!-- ─────────────────────────── SLIDE 5: The Goal ─────────────────────────── -->
-<section>
-<h2>The Goal</h2>
-<ul>
-    <li>A complete game — not a toy project</li>
-    <li>Production-grade code: tests, docs, clean architecture</li>
-    <li>Zero prior Pygame experience</li>
-    <li>Find out if AI can handle the boring parts</li>
-</ul>
-</section>
-
-<!-- ─────────────────────────── SLIDE 6: AI before — small tasks ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 5: AI before — small tasks ─────────────────────────────── -->
 <section>
 <h2>My View on AI Before This</h2>
-<p class="big-quote">Small tasks: solid.<br>Write a regex. Parse JSON. No complaints.</p>
+<p class="big-quote">Small tasks: all good.<br>Write a regex. Parse JSON. No complaints.</p>
 <ul>
     <li>Saved time on repetitive work daily</li>
     <li>Good at isolated, well-defined problems</li>
 </ul>
 </section>
 
-<!-- ─────────────────────────── SLIDE 7: AI before — big tasks ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 6: AI before — big tasks ─────────────────────────────── -->
 <section>
 <h2>But for Larger Features?</h2>
 <p class="big-quote">"Build this feature" →<br>code that violates every principle you care about.</p>
@@ -357,24 +346,21 @@
 </ul>
 </section>
 
-<!-- ─────────────────────────── SLIDE 8: What is Pygame ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 7: What is Pygame ─────────────────────────────── -->
 <section>
 <h2>What is Pygame?</h2>
 <div class="two-col-img" style="grid-template-columns: 3fr 1fr">
 <ul style="font-size:0.68em">
-    <li>Python library for 2D games</li>
+    <li>Python library for games</li>
     <li>Handles graphics, input, sound, collision</li>
     <li>Beginner-friendly, cross-platform</li>
     <li>Popular with indie devs and students</li>
 </ul>
-<img src="https://upload.wikimedia.org/wikipedia/en/8/8c/Pygame_logo.png"
-     alt="Pygame logo"
-     style="max-height:20vh;max-width:100%;object-fit:contain;display:block;margin:0 auto"
-     onerror="this.style.display='none'">
+<img src="media/image2.png" alt="Pygame logo" style="max-height:50vh;max-width:100%;object-fit:contain;display:block;margin:0 auto;background:#fff;padding:0.4em;border-radius:6px">
 </div>
 </section>
 
-<!-- ─────────────────────────── SLIDE 9: Pygame in Action — DaFluffyPotato ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 8: Pygame in Action — DaFluffyPotato ─────────────────────────────── -->
 <section>
 <h2>Pygame in Action</h2>
 <div class="two-col-img">
@@ -390,7 +376,7 @@
 </div>
 </section>
 
-<!-- ─────────────────────────── SLIDE 10: Pygame in Action — DaFluffyPotato 2 ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 9: Pygame in Action — DaFluffyPotato 2 ─────────────────────────────── -->
 <section>
 <h2>Pygame in Action</h2>
 <div class="two-col-img">
@@ -406,7 +392,7 @@
 </div>
 </section>
 
-<!-- ─────────────────────────── SLIDE 11: Pygame in Action — Clear Code ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 10: Pygame in Action — Clear Code ─────────────────────────────── -->
 <section>
 <h2>Pygame in Action</h2>
 <div class="two-col-img">
@@ -422,7 +408,7 @@
 </div>
 </section>
 
-<!-- ─────────────────────────── SLIDE 12: Pygame Community ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 11: Pygame Community ─────────────────────────────── -->
 <section>
 <h2>The Community</h2>
 <div class="two-col-img">
@@ -433,21 +419,21 @@
     <li>Good place to ask questions</li>
 </ul>
 <div style="text-align:center">
-    <div style="font-size:2em;margin-bottom:0.3em">reddit</div>
-    <div style="color:var(--accent);font-size:0.68em;font-family:'JetBrains Mono',monospace">r/pygame</div>
-    <div style="color:var(--muted);font-size:0.55em;margin-top:0.5em">~60k members</div>
+    <img src="media/reddit.png" alt="Reddit logo" style="max-height:12vh;object-fit:contain;display:block;margin:0 auto">
+    <div style="color:var(--accent);font-size:0.68em;font-family:'JetBrains Mono',monospace;margin-top:0.4em">r/pygame</div>
+    <div style="color:var(--muted);font-size:0.55em;margin-top:0.3em">~60k members</div>
 </div>
 </div>
 </section>
 
-<!-- ─────────────────────────── SLIDE 13: Section divider ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 12: Section divider ─────────────────────────────── -->
 <section class="divider">
 <div class="accent-line"></div>
 <h2>Enter PRP</h2>
-<p class="sub">Plan → Research → Plan</p>
+<p class="sub">Product Requirement Prompt</p>
 </section>
 
-<!-- ─────────────────────────── SLIDE 13: What is Claude Code ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 13: What is Claude Code ─────────────────────────────── -->
 <section>
 <h2>Claude Code CLI</h2>
 <ul>
@@ -459,7 +445,7 @@
 <p style="margin-top:0.8em;font-size:0.65em;color:var(--muted)">AI that ships code, not just suggestions</p>
 </section>
 
-<!-- ─────────────────────────── SLIDE 14: How PRP Works — flow ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 14: How PRP Works — flow ─────────────────────────────── -->
 <section>
 <h2>How PRP Works</h2>
 <div class="flow">
@@ -489,9 +475,34 @@
         <span class="desc">Documents everything, including mistakes</span>
     </div>
 </div>
+<p style="text-align:center;font-size:0.58em;color:var(--muted);margin-top:0.8em">
+    By <strong style="color:var(--text)">Rasmus Widing</strong> (@Wirasm) · Ralph loop by <strong style="color:var(--text)">Geoffrey Huntley</strong> ·
+    <a href="https://github.com/Wirasm/PRPs-agentic-eng" target="_blank" style="color:var(--accent);text-decoration:none">github.com/Wirasm/PRPs-agentic-eng</a>
+</p>
 </section>
 
-<!-- ─────────────────────────── SLIDE 15: Behind the scenes ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 15: What is Ralph ─────────────────────────────── -->
+<section>
+<h2>What is the Ralph Loop?</h2>
+<div class="two-col-img" style="grid-template-columns:2fr 1fr;align-items:center;margin-top:0.6em">
+<ul style="font-size:0.72em">
+    <li>Named after Ralph Wiggum — tries hard, doesn't always nail it</li>
+    <li>Runs the plan task by task, autonomously</li>
+    <li>After each task: runs the validation command</li>
+    <li>If it fails: debugs, fixes, and retries</li>
+    <li>Keeps looping until all checks pass</li>
+    <li>You check in at the end, not during</li>
+</ul>
+<div style="text-align:center">
+    <img src="media/ralph.webp"
+         alt="Ralph Wiggum"
+         style="max-height:42vh;object-fit:contain;display:block;margin:0 auto">
+    <p style="color:var(--muted);font-size:0.55em;margin-top:0.5em;font-style:italic">"I'm helping!"</p>
+</div>
+</div>
+</section>
+
+<!-- ─────────────────────────────── SLIDE 16: Behind the scenes ─────────────────────────────── -->
 <section>
 <h2>What Actually Happens</h2>
 <ul>
@@ -503,19 +514,19 @@
 </ul>
 </section>
 
-<!-- ─────────────────────────── SLIDE 16: What it feels like ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 17: What it feels like ─────────────────────────────── -->
 <section>
 <h2>What It Feels Like</h2>
-<p class="big-quote">Like handing a task to a mid-level dev who actually gives a damn.</p>
+<p class="big-quote">Like handing a task to a mid-level dev.</p>
 <ul>
     <li>Comes back with a plan before writing a single line</li>
-    <li>Asks when something is unclear — doesn't guess and move on</li>
+    <li>Asks when something is unclear — doesn't guess</li>
     <li>Doesn't always get it right the first time</li>
     <li>But keeps going until the tests pass</li>
 </ul>
 </section>
 
-<!-- ─────────────────────────── SLIDE 17: What it feels like pt2 ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 18: What it feels like pt2 ─────────────────────────────── -->
 <section>
 <h2>Not Magic — Collaborative</h2>
 <div class="two-col" style="font-size:0.78em;margin-top:0.5em">
@@ -528,7 +539,7 @@
     </ul>
 </div>
 <div>
-    <p class="col-label" style="color:var(--accent)">Claude brings</p>
+    <p class="col-label" style="color:var(--accent)">Claude + PRP brings</p>
     <ul>
         <li>Research and planning</li>
         <li>Tireless execution</li>
@@ -539,7 +550,7 @@
 <p style="text-align:center;color:var(--muted);font-size:0.65em;margin-top:1em">You stay in the loop — it does the grunt work.</p>
 </section>
 
-<!-- ─────────────────────────── SLIDE 18: In Practice ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 19: In Practice ─────────────────────────────── -->
 <section>
 <h2>In Practice</h2>
 <div class="two-col" style="font-size:0.8em;margin-top:0.5em">
@@ -560,7 +571,7 @@
 </div>
 </section>
 
-<!-- ─────────────────────────── SLIDE 17: How I started ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 20: How I started ─────────────────────────────── -->
 <section>
 <h2>How It Started</h2>
 <pre><code>/prp-prd Build a top-down zombie shooter game in Pygame.
@@ -575,13 +586,13 @@ Requirements:
 <p class="caption" style="margin-top:0.5em">Research begins. No code written yet.</p>
 </section>
 
-<!-- ─────────────────────────── SLIDE 18: Claude plans ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 21: Claude plans ─────────────────────────────── -->
 <section>
 <h2>Claude Plans</h2>
 <img src="media/image7.png" alt="Claude plan output screenshot" class="slide-media">
 </section>
 
-<!-- ─────────────────────────── SLIDE 19: Execute ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 22: Execute ─────────────────────────────── -->
 <section>
 <h2>Once the Plan Looks Right</h2>
 <pre><code>/prp-implement topdown-zombie-shooter-mvp.plan.md</code></pre>
@@ -592,20 +603,20 @@ Requirements:
 </ul>
 </section>
 
-<!-- ─────────────────────────── SLIDE 20: Result ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 23: Result ─────────────────────────────── -->
 <section>
 <h2>After a Few PRDs</h2>
 <video controls poster="media/image8.png" aria-label="Zombie shooter game demo" style="max-height:62vh;max-width:90%;display:block;margin:0 auto;border-radius:6px"><source src="media/media4.mov"></video>
 </section>
 
-<!-- ─────────────────────────── SLIDE 21: More additions ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 24: More additions ─────────────────────────────── -->
 <section>
 <h2>Adding More Features</h2>
 <p style="color:var(--muted);font-size:0.72em;margin-bottom:0.6em">Each feature: PRD → phases → plan → execute.</p>
 <img src="media/image9.png" alt="Feature additions screenshot" class="slide-media">
 </section>
 
-<!-- ─────────────────────────── SLIDE 22: Finding 1 ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 25: Finding 1 ─────────────────────────────── -->
 <section>
 <h2>Finding: It Cuts Corners Too</h2>
 <p style="font-size:0.75em">When a task is simple, Claude will sometimes suggest skipping the formal process.</p>
@@ -613,29 +624,29 @@ Requirements:
 <p class="caption">Relatable, honestly.</p>
 </section>
 
-<!-- ─────────────────────────── SLIDE 23: Finding 2 ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 26: Finding 2 ─────────────────────────────── -->
 <section>
 <h2>Finding: It Verifies Understanding</h2>
 <p style="font-size:0.75em">Before writing code, Claude confirms it understood the problem correctly.</p>
 <img src="media/image11.png" alt="Claude verifying understanding before coding" class="slide-media">
 </section>
 
-<!-- ─────────────────────────── SLIDE 24: PRP Plan contents ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 27: PRP Plan contents ─────────────────────────────── -->
 <section>
 <h2>What's Inside a PRP Plan</h2>
-<div class="two-col" style="font-size:0.78em;margin-top:0.5em">
+<div class="two-col" style="font-size:0.65em;margin-top:0.5em">
 <ul>
-    <li>User story with acceptance criteria</li>
-    <li>Existing code patterns to follow</li>
+    <li>User story + acceptance criteria</li>
+    <li>Existing code patterns to mirror</li>
 </ul>
 <ul>
-    <li>Tasks with exact file and line references</li>
-    <li>Validation commands to confirm it worked</li>
+    <li>Tasks with file and line references</li>
+    <li>Validation commands per task</li>
 </ul>
 </div>
 </section>
 
-<!-- ─────────────────────────── SLIDE 25: Full MVP plan (scrollable, rendered) ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 28: Full MVP plan (scrollable, rendered) ─────────────────────────────── -->
 <section>
 <h2 style="margin-bottom:0.3em">MVP Plan — Full Document</h2>
 <p class="caption" style="margin-bottom:0.4em">Scroll to explore &nbsp;·&nbsp; <span style="color:var(--accent)">topdown-zombie-shooter-mvp.plan.md</span></p>
@@ -1881,55 +1892,86 @@ From PRP-001 Section 8 - explicitly deferred to future PRPs:
 </script>
 </section>
 
-<!-- ─────────────────────────── SLIDE 27: Section divider ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 29: Section divider ─────────────────────────────── -->
 <section class="divider">
 <div class="accent-line"></div>
 <h2>Results</h2>
 <p class="sub">What five PRDs produced</p>
 </section>
 
-<!-- ─────────────────────────── SLIDE 26: By the numbers ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 30: By the numbers ─────────────────────────────── -->
 <section>
 <h2>By the Numbers</h2>
 <div class="stat-grid">
     <div class="stat">
-        <span class="stat-num">5</span>
+        <span class="stat-num">7</span>
         <span class="stat-label">PRDs</span>
     </div>
     <div class="stat">
-        <span class="stat-num">21</span>
+        <span class="stat-num">24</span>
         <span class="stat-label">Plans</span>
     </div>
     <div class="stat">
-        <span class="stat-num">132</span>
+        <span class="stat-num">166</span>
         <span class="stat-label">Tests passing</span>
     </div>
     <div class="stat">
-        <span class="stat-num">6.5k</span>
+        <span class="stat-num">5.5k</span>
         <span class="stat-label">Lines of code</span>
     </div>
 </div>
 <p style="text-align:center;color:var(--muted);font-size:0.62em;margin-top:1em">~100% one-pass implementation success rate</p>
+<p style="text-align:center;color:var(--muted);font-size:0.62em;margin-top:0.4em">166 tests sounds great — ~60% test real behaviour, ~40% check that attributes exist. Still caught real bugs.</p>
 </section>
 
-<!-- ─────────────────────────── SLIDE 27: What got built ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 31: Cost ─────────────────────────────── -->
+<section>
+<h2>How Much Work Did It Do?</h2>
+<div class="stat-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:0.8em">
+    <div class="stat">
+        <span class="stat-num">~$169</span>
+        <span class="stat-label">API-equivalent cost</span>
+    </div>
+    <div class="stat">
+        <span class="stat-num">349k</span>
+        <span class="stat-label">Output tokens</span>
+    </div>
+    <div class="stat">
+        <span class="stat-num">289M</span>
+        <span class="stat-label">Cache read tokens</span>
+    </div>
+</div>
+<div class="two-col" style="font-size:0.72em;margin-top:0.2em">
+<ul>
+    <li>Covered by Teams subscription — not billed per token</li>
+    <li>$169 is what it would cost hitting the API directly</li>
+</ul>
+<ul>
+    <li>Cache re-reads your whole codebase on every task</li>
+    <li>Without caching: ~10× more expensive</li>
+</ul>
+</div>
+<p style="text-align:center;color:var(--muted);font-size:0.6em;margin-top:0.8em">Sonnet pricing · actual spend depends on your plan</p>
+</section>
+
+<!-- ─────────────────────────────── SLIDE 32: What got built ─────────────────────────────── -->
 <section>
 <h2>What Got Built</h2>
-<div class="two-col" style="font-size:0.78em">
+<div class="two-col" style="font-size:0.65em">
 <ul>
     <li>Animated Rambo player sprite</li>
-    <li>5 zombie variants with distinct behaviour</li>
+    <li>5 zombie variants</li>
     <li>3 weapons with pickups</li>
 </ul>
 <ul>
     <li>Blood particles, decals, corpses</li>
     <li>Endless survival mode</li>
-    <li>132 tests covering all of it</li>
+    <li>166 tests covering all of it</li>
 </ul>
 </div>
 </section>
 
-<!-- ─────────────────────────── SLIDE 28: The Stack ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 33: The Stack ─────────────────────────────── -->
 <section>
 <h2>The Stack</h2>
 <div class="tag-list">
@@ -1940,13 +1982,13 @@ From PRP-001 Section 8 - explicitly deferred to future PRPs:
     <span class="tag accent">Claude Code</span>
     <span class="tag">Type hints everywhere</span>
     <span class="tag">3 READMEs</span>
-    <span class="tag">5 PRDs</span>
-    <span class="tag">21 implementation plans</span>
-    <span class="tag">23 reports</span>
+    <span class="tag">7 PRDs</span>
+    <span class="tag">24 implementation plans</span>
+    <span class="tag">26 reports</span>
 </div>
 </section>
 
-<!-- ─────────────────────────── SLIDE 29: Quality comparison ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 34: Quality comparison ─────────────────────────────── -->
 <section>
 <h2>Structured vs. Unstructured</h2>
 <div class="two-col" style="font-size:0.75em;margin-top:0.6em">
@@ -1965,15 +2007,15 @@ From PRP-001 Section 8 - explicitly deferred to future PRPs:
     <ul>
         <li>Clear PRD with requirements</li>
         <li>Plan built from your codebase</li>
-        <li>132 tests written automatically</li>
+        <li>166 tests written automatically</li>
         <li>Complete audit trail</li>
-        <li style="color:var(--green);font-style:italic">Production-ready code</li>
+        <li style="color:var(--green);font-style:italic">Production-ready code (still might need your review and adjustments)</li>
     </ul>
 </div>
 </div>
 </section>
 
-<!-- ─────────────────────────── SLIDE 30: Why it matters ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 35: Why it matters ─────────────────────────────── -->
 <section>
 <h2>Why This Matters</h2>
 <ul>
@@ -1984,38 +2026,225 @@ From PRP-001 Section 8 - explicitly deferred to future PRPs:
 </ul>
 </section>
 
-<!-- ─────────────────────────── SLIDE 31: Transition ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 36: Transition ─────────────────────────────── -->
 <section class="divider">
 <div class="accent-line"></div>
 <h2>Talk is cheap.</h2>
 <p class="sub">Let's look at what the code actually looks like.</p>
 </section>
 
-<!-- ─────────────────────────── SLIDE 32: Code ─────────────────────────── -->
-<section>
-<h2>The Code</h2>
-<img src="media/image12.png" alt="Generated code screenshot" class="slide-media">
-</section>
 
-<!-- ─────────────────────────── SLIDE 33: Structure ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 37: Structure ─────────────────────────────── -->
 <section>
 <h2>Project Structure</h2>
 <img src="media/image13.png" alt="Project directory structure" class="slide-media">
 </section>
 
-<!-- ─────────────────────────── SLIDE 34: Let's Play ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 38: Code Design ─────────────────────────────── -->
+<section>
+<h2>Code Design</h2>
+<div class="two-col" style="font-size:0.72em;margin-top:0.5em">
+<div>
+    <p style="color:var(--accent);font-weight:600;font-size:0.8em;margin-bottom:0.4em">PATTERNS USED</p>
+    <ul>
+        <li><strong>Template Method</strong> — <code class="inline">Scene</code> base class defines <code class="inline">handle_event</code> / <code class="inline">update</code> / <code class="inline">draw</code> interface</li>
+        <li><strong>Flyweight</strong> — sprites loaded once at module level, shared across all entity instances</li>
+        <li><strong>Separation of concerns</strong> — systems are stateless functions, entities hold only data and self-rendering</li>
+    </ul>
+</div>
+<div>
+    <p style="color:var(--accent);font-weight:600;font-size:0.8em;margin-bottom:0.4em">SOLID IN PRACTICE</p>
+    <ul>
+        <li><strong>S</strong> — each class has one job: <code class="inline">Spawner</code> spawns, <code class="inline">Collisions</code> resolves, <code class="inline">Animation</code> animates</li>
+        <li><strong>O</strong> — new zombie variants added without touching existing code</li>
+        <li><strong>L</strong> — <code class="inline">MenuScene</code>, <code class="inline">PlayScene</code>, <code class="inline">GameOverScene</code> swap into <code class="inline">Game</code> interchangeably</li>
+        <li><strong>D</strong> — <code class="inline">Game</code> depends on <code class="inline">Scene</code> interface, not concrete scenes</li>
+    </ul>
+</div>
+</div>
+</section>
+
+<!-- ─────────────────────────────── SLIDE 39: Scene State Machine ─────────────────────────────── -->
+<section>
+<h2>Scene State Machine</h2>
+<div style="display:flex;flex-direction:column;align-items:center;gap:0.25em;margin-top:0.4em;font-size:0.68em">
+    <div style="border:1px solid var(--border);border-radius:6px;padding:0.3em 1.5em;background:var(--bg-alt);color:var(--muted)">
+        <code class="inline">main.py</code> → <code class="inline">Game.run()</code>
+    </div>
+    <div style="color:var(--muted);font-size:0.75em">▼ starts with</div>
+    <div style="border:2px solid var(--accent);border-radius:6px;padding:0.35em 2em;background:var(--bg-alt);color:var(--accent);font-weight:600">MenuScene</div>
+    <div style="display:flex;align-items:center;gap:2.5em;font-size:0.75em;color:var(--muted)">
+        <span>ESC ▲</span><span>ENTER ▼</span>
+    </div>
+    <div style="border:2px solid var(--green);border-radius:6px;padding:0.35em 2em;background:var(--bg-alt);color:var(--green);font-weight:600">PlayScene</div>
+    <div style="display:flex;gap:3.5em;font-size:0.75em;color:var(--muted)">
+        <span>HP = 0 ▼</span><span>▼ time = 60s</span>
+    </div>
+    <div style="border:2px solid var(--red);border-radius:6px;padding:0.35em 2em;background:var(--bg-alt);color:var(--red);font-weight:600">GameOverScene</div>
+    <div style="color:var(--muted);font-size:0.7em;margin-top:0.1em">R → restart &nbsp;·&nbsp; ESC → menu</div>
+</div>
+</section>
+
+<!-- ─────────────────────────────── SLIDE 40: Game Loop ─────────────────────────────── -->
+<section>
+<h2>The Game Loop</h2>
+<div style="display:flex;justify-content:center;gap:1.5em;margin-top:0.4em;font-size:0.62em;align-items:flex-start">
+
+<div style="display:flex;flex-direction:column;gap:0.2em">
+    <div style="border:1px solid var(--accent);border-radius:5px;padding:0.35em 0.7em;background:var(--bg-alt);color:var(--accent);font-weight:600;text-align:center">Every frame (60 fps)</div>
+    <div style="color:var(--muted);text-align:center;font-size:0.85em">▼</div>
+    <div style="border:1px solid var(--border);border-radius:5px;padding:0.3em 0.7em;background:var(--bg-alt)"><code class="inline">dt = clock.tick(60) / 1000</code></div>
+    <div style="color:var(--muted);text-align:center;font-size:0.85em">▼</div>
+    <div style="border:1px solid var(--border);border-radius:5px;padding:0.3em 0.7em;background:var(--bg-alt)"><code class="inline">scene.handle_event(event)</code></div>
+    <div style="color:var(--muted);text-align:center;font-size:0.85em">▼</div>
+    <div style="border:1px solid var(--border);border-radius:5px;padding:0.3em 0.7em;background:var(--bg-alt)"><code class="inline">scene.update(dt)</code></div>
+    <div style="color:var(--muted);text-align:center;font-size:0.85em">▼</div>
+    <div style="border:1px solid var(--border);border-radius:5px;padding:0.3em 0.7em;background:var(--bg-alt)"><code class="inline">scene.draw(screen)</code></div>
+    <div style="color:var(--muted);text-align:center;font-size:0.85em">▼</div>
+    <div style="border:1px solid var(--border);border-radius:5px;padding:0.3em 0.7em;background:var(--bg-alt)"><code class="inline">pygame.display.flip()</code></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:0.25em">
+    <div style="border:1px solid var(--border);border-radius:5px;padding:0.35em 0.7em;background:var(--bg-alt);color:var(--muted)"><strong style="color:var(--text)">handle_event</strong> — keyboard, mouse, quit</div>
+    <div style="border:1px solid var(--border);border-radius:5px;padding:0.35em 0.7em;background:var(--bg-alt);color:var(--muted)"><strong style="color:var(--text)">update(dt)</strong> — move entities, run systems, check collisions</div>
+    <div style="border:1px solid var(--border);border-radius:5px;padding:0.35em 0.7em;background:var(--bg-alt);color:var(--muted)"><strong style="color:var(--text)">draw</strong> — render everything to screen in order</div>
+    <div style="border:1px solid var(--border);border-radius:5px;padding:0.35em 0.7em;background:var(--bg-alt);color:var(--muted)"><strong style="color:var(--text)">dt</strong> — delta time keeps movement frame-rate independent</div>
+</div>
+
+</div>
+</section>
+
+<!-- ─────────────────────────────── SLIDE 41: PlayScene entities ─────────────────────────────── -->
+<section>
+<h2>What PlayScene Owns</h2>
+<div style="display:flex;justify-content:center;gap:0.8em;margin-top:0.5em;font-size:0.62em;align-items:flex-start;flex-wrap:wrap">
+
+<div style="border:2px solid var(--green);border-radius:6px;padding:0.5em 0.7em;min-width:8em;background:var(--bg-alt)">
+    <div style="color:var(--green);font-weight:700;margin-bottom:0.3em;text-align:center">Player</div>
+    <div style="color:var(--muted);line-height:1.5">pos, vel, hp<br>current_weapon<br>handle_input()<br>update(dt)<br>shoot()</div>
+</div>
+
+<div style="border:2px solid var(--red);border-radius:6px;padding:0.5em 0.7em;min-width:8em;background:var(--bg-alt)">
+    <div style="color:var(--red);font-weight:700;margin-bottom:0.3em;text-align:center">Zombies [ ]</div>
+    <div style="color:var(--muted);line-height:1.5">5 variants<br>pos, hp, speed<br>seek player<br>update(dt)</div>
+</div>
+
+<div style="border:2px solid var(--accent);border-radius:6px;padding:0.5em 0.7em;min-width:8em;background:var(--bg-alt)">
+    <div style="color:var(--accent);font-weight:700;margin-bottom:0.3em;text-align:center">Bullets [ ]</div>
+    <div style="color:var(--muted);line-height:1.5">pos, vel, damage<br>travel to target<br>lifetime ttl<br>update(dt)</div>
+</div>
+
+<div style="border:1px solid var(--border);border-radius:6px;padding:0.5em 0.7em;min-width:8em;background:var(--bg-alt)">
+    <div style="color:var(--text);font-weight:700;margin-bottom:0.3em;text-align:center">FX [ ]</div>
+    <div style="color:var(--muted);line-height:1.5">BloodParticle<br>BloodDecal<br>DeadZombie<br>AcidProjectile</div>
+</div>
+
+<div style="border:1px solid var(--border);border-radius:6px;padding:0.5em 0.7em;min-width:8em;background:var(--bg-alt)">
+    <div style="color:var(--text);font-weight:700;margin-bottom:0.3em;text-align:center">World [ ]</div>
+    <div style="color:var(--muted);line-height:1.5">Obstacle<br>Pickup<br>(weapons, health)</div>
+</div>
+
+</div>
+</section>
+
+<!-- ─────────────────────────────── SLIDE 42: Systems ─────────────────────────────── -->
+<section>
+<h2>Systems — Separate from Entities</h2>
+<div style="display:flex;justify-content:center;gap:0.8em;margin-top:0.5em;font-size:0.62em;align-items:flex-start">
+
+<div style="border:2px solid var(--accent);border-radius:6px;padding:0.5em 0.7em;min-width:10em;background:var(--bg-alt)">
+    <div style="color:var(--accent);font-weight:700;margin-bottom:0.3em;text-align:center">collisions.py</div>
+    <div style="color:var(--muted);line-height:1.5">bullet ↔ zombie<br>player ↔ zombie<br>player ↔ pickup<br>entities ↔ obstacles<br>circle distance math</div>
+</div>
+
+<div style="border:2px solid var(--accent);border-radius:6px;padding:0.5em 0.7em;min-width:10em;background:var(--bg-alt)">
+    <div style="color:var(--accent);font-weight:700;margin-bottom:0.3em;text-align:center">spawner.py</div>
+    <div style="color:var(--muted);line-height:1.5">spawns at edges<br>rate ramps over time<br>1.0s → 0.25s interval<br>picks random variant</div>
+</div>
+
+<div style="border:2px solid var(--accent);border-radius:6px;padding:0.5em 0.7em;min-width:10em;background:var(--bg-alt)">
+    <div style="color:var(--accent);font-weight:700;margin-bottom:0.3em;text-align:center">animation.py</div>
+    <div style="color:var(--muted);line-height:1.5">sprite sheet frames<br>walk / idle / death<br>frame timer per entity</div>
+</div>
+
+<div style="border:2px solid var(--accent);border-radius:6px;padding:0.5em 0.7em;min-width:10em;background:var(--bg-alt)">
+    <div style="color:var(--accent);font-weight:700;margin-bottom:0.3em;text-align:center">weapon_art.py</div>
+    <div style="color:var(--muted);line-height:1.5">pistol / shotgun / rifle<br>sprite per weapon type<br>muzzle flash timing</div>
+</div>
+
+</div>
+<p style="text-align:center;color:var(--muted);font-size:0.58em;margin-top:0.6em">Systems are stateless functions — they take entities as arguments, keeping logic out of entity classes</p>
+</section>
+
+<!-- ─────────────────────────────── SLIDE 43: When not to use PRP ─────────────────────────────── -->
+<section>
+<h2>When NOT to Use PRP</h2>
+<ul style="font-size:0.72em">
+    <li>One-liners and quick fixes — overhead isn't worth it</li>
+    <li>Exploratory work where you don't know what you want yet</li>
+    <li>When the problem is understanding, not building</li>
+    <li>UI tweaks, copy edits — just do it</li>
+    <li>When you need to deeply understand the code yourself</li>
+</ul>
+<p style="color:var(--muted);font-size:0.62em;margin-top:0.8em;text-align:center">PRP trades understanding for speed — sometimes you need both</p>
+</section>
+
+<!-- ─────────────────────────────── SLIDE 44: Programmer's take ─────────────────────────────── -->
+<section>
+<h2>A Programmer's Take</h2>
+<p class="big-quote">AI writes the code. You're still responsible for it.</p>
+<ul style="font-size:0.72em">
+    <li>Read and understand everything it produces</li>
+    <li>Wrong direction caught early is cheap — caught late is painful</li>
+    <li>Review the plan AND the code after</li>
+</ul>
+</section>
+
+<!-- ─────────────────────────────── SLIDE 45: Is PRP Ideal ─────────────────────────────── -->
+<section>
+<h2>Is PRP Ideal?</h2>
+<p class="big-quote" style="font-size:1.6em;margin-top:0.6em">…right?</p>
+</section>
+
+<!-- ─────────────────────────────── SLIDE 46: No ─────────────────────────────── -->
+<section>
+<h2 style="color:var(--red)">No.</h2>
+<p class="big-quote" style="margin-top:0.5em;margin-bottom:0.6em">Claude wrote the bugs too.</p>
+<ul style="font-size:0.75em">
+    <li>Explosion kills don't remove zombies — they quietly persist until a bullet finishes them</li>
+    <li>Shotgun can trigger chain explosions 3× from a single Exploder death</li>
+</ul>
+<ul style="font-size:0.65em;margin-top:0.6em">
+    <li style="color:var(--muted)">Reviewing the plan isn't the same as reviewing the code</li>
+    <li style="color:var(--muted)">Claude found these bugs when asked to review</li>
+</ul>
+</section>
+
+<!-- ─────────────────────────────── SLIDE 47: Verdict ─────────────────────────────── -->
+<section>
+<h2>My Verdict</h2>
+<p class="big-quote">Compressing the first week of a project into an afternoon.</p>
+<ul style="font-size:0.72em;margin-top:0.6em">
+    <li>Should work with anything, not just games</li>
+    <li>Clean enough to build MVPs from scratch or even continue ongoing work</li>
+    <li>If you want something production ready - you'll need to do the work</li>
+    <li>Saves time trading quality</li>
+    <li>You are the owner not the agent</li>
+</ul>
+</section>
+
+<!-- ─────────────────────────────── SLIDE 48: Let's Play ─────────────────────────────── -->
 <section class="divider">
 <div class="accent-line"></div>
 <h2>Let's Play</h2>
 <p class="sub">WASD to move &nbsp;·&nbsp; Mouse to aim &nbsp;·&nbsp; Click to shoot</p>
-<p style="margin-top:0.8em;color:var(--muted);font-size:0.65em">Try to beat my high score. I dare you.</p>
 </section>
 
-<!-- ─────────────────────────── SLIDE 35: GitHub ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 49: GitHub ─────────────────────────────── -->
 <section>
 <h2>Check It Out</h2>
 <div class="two-col-img">
-<ul>
+<ul style="font-size:0.68em">
     <li>Full source code, tests, docs</li>
     <li>Complete PRP documentation</li>
     <li>Works on macOS, Linux, Windows</li>
@@ -2026,25 +2255,25 @@ From PRP-001 Section 8 - explicitly deferred to future PRPs:
      style="max-height:15vh;max-width:80%;object-fit:contain;display:block;margin:0 auto;filter:invert(1)"
      onerror="this.style.display='none'">
 </div>
-<p style="text-align:center;color:var(--accent);font-size:0.72em;margin-top:0.8em">github.com/vychiokas/zombie-shooter</p>
+<p style="text-align:center;font-size:0.72em;margin-top:0.8em"><a href="https://github.com/Wirasm/PRPs-agentic-eng" target="_blank" style="color:var(--accent);text-decoration:none">github.com/Wirasm/PRPs-agentic-eng</a></p>
+<p style="text-align:center;font-size:0.72em;margin-top:0.4em"><a href="https://github.com/vychiokas/zombie-shooter" target="_blank" style="color:var(--accent);text-decoration:none">github.com/vychiokas/zombie-shooter</a></p>
 </section>
 
-<!-- ─────────────────────────── SLIDE 36: Credits ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 50: Credits ─────────────────────────────── -->
 <section>
 <h2>Credits</h2>
 <ul>
     <li><strong>PRP Methodology</strong> — Rasmus Widing (@Wirasm)</li>
     <li><strong>Ralph Loop</strong> — Geoffrey Huntley</li>
     <li><strong>Claude Code CLI</strong> — Anthropic</li>
-    <li><strong>This game</strong> — github.com/vychiokas/zombie-shooter</li>
 </ul>
 </section>
 
-<!-- ─────────────────────────── SLIDE 37: Questions ─────────────────────────── -->
+<!-- ─────────────────────────────── SLIDE 51: Questions ─────────────────────────────── -->
 <section class="divider">
 <div class="accent-line"></div>
 <h2>Questions?</h2>
-<p class="sub">Or just try to survive past 60 seconds.</p>
+<p class="sub">Or just clone and try to survive past 60 seconds.</p>
 </section>
 
         </div>

@@ -1,0 +1,16 @@
+presentation/_archive/
+presentation/media/
+
+# macOS
+.DS_Store
+._*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDEs
+.idea/
+.vscode/

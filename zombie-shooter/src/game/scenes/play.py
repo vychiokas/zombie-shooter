@@ -738,6 +738,37 @@ class PlayScene(Scene):
 
             self.game.change_scene(GameOverScene(self.game, self.kills, won=False))
 
+    def _update_face_animation(self, dt: float) -> None:
+        """Tick face idle-animation timers (blink and look-around).
+
+        Args:
+            dt: Delta time in seconds.
+        """
+        # Pain flash resets look to center (startled reaction)
+        if self.player.pain_timer > 0:
+            self._face_look = "center"
+            self._face_look_timer = random.uniform(5.0, 9.0)
+            return
+
+        # Blink: decrement active blink, or count down to next one
+        if self._face_blink_timer > 0:
+            self._face_blink_timer = max(0.0, self._face_blink_timer - dt)
+        else:
+            self._face_blink_cooldown -= dt
+            if self._face_blink_cooldown <= 0:
+                self._face_blink_timer = 0.12   # blink lasts ~2 frames at 60fps
+                self._face_blink_cooldown = random.uniform(3.0, 7.0)
+
+        # Look direction: glance sideways then return to center
+        self._face_look_timer -= dt
+        if self._face_look_timer <= 0:
+            if self._face_look == "center":
+                self._face_look = random.choice(["left", "right"])
+                self._face_look_timer = random.uniform(0.6, 1.4)
+            else:
+                self._face_look = "center"
+                self._face_look_timer = random.uniform(4.0, 10.0)
+
     def update(self, dt: float) -> None:
         """Update gameplay.
 
@@ -752,6 +783,7 @@ class PlayScene(Scene):
         self._handle_pickups(dt)
         self._process_bullet_hits()
         self._process_player_damage(dt)
+        self._update_face_animation(dt)
         self._check_game_over()
 
     def _draw_hud(self, screen: pygame.Surface) -> None:
@@ -812,7 +844,11 @@ class PlayScene(Scene):
         face_cy = panel_y + HUD_PANEL_H // 2
         face_r = HUD_FACE_SIZE // 2
         face_state = _get_face_state(self.player.hp, self.player.pain_timer)
-        _draw_hud_face(screen, face_cx, face_cy, face_r, face_state)
+        _draw_hud_face(
+            screen, face_cx, face_cy, face_r, face_state,
+            look=self._face_look,
+            blink=self._face_blink_timer > 0,
+        )
 
         # HP display (right side), color shifts green → red as HP drops
         hp_val = max(0, int(self.player.hp))
